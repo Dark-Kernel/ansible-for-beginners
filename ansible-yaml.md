@@ -30,28 +30,28 @@ Vegetables:
 ###### A dictionary is set of properties group together under an item
 ```YAML
 Banana:
-	Calories: 105
-	Fat: 0.4 g
-	Carbs: 27 g
+  Calories: 105
+  Fat: 0.4 g
+  Carbs: 27 g
 
 Grapes:
-	Calories: 62
-	Fat: 0.3 g
-	Carbs: 16 g
+  Calories: 62
+  Fat: 0.3 g
+  Carbs: 16 g
 ```
 > Notice the black space before every item, They must have equal number of blank spaces before the properties of a single item. 
 
 4. List of Dictionary:
 ```YAML
 Fruits:
-  -	Banana:
-		Calories: 105
-		Fat: 0.4 g
-		Carbs: 27 g
-  -	Grape: 
-		Calories: 62
-		Fat: 0.3 g
-		Carbs: 16 g 
+  - Banana:
+      Calories: 105
+      Fat: 0.4 g
+      Carbs: 27 g
+  - Grape: 
+      Calories: 62
+      Fat: 0.3 g
+      Carbs: 16 g 
 ```
 
 5. Difference: between list and dictionary
