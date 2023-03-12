@@ -1,3 +1,3 @@
 # Ansile For Beginners.
 
-This is simple and quick tutorial on ansible basics.
+This is a simple tutorial for ansible basics which covers topics like variable, conditionals, loops, playbooks, etc.
