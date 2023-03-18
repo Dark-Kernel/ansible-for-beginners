@@ -46,7 +46,7 @@ But how do you passing two values in an array ? Instead of passing arrays of str
   name: Create users
   hosts: localhost
   tasks: 
-  -  user: name="{{ item.name }}"    state=present    uid="{{ item.uid }}"
+  -  user: name="{{ item.name }}"    state=present    uid="{{ item.uid }}"    group=developers
 	loop:
 	  - name: joe
 	    uid: 1010

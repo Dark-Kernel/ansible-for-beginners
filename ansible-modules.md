@@ -108,9 +108,11 @@ Ansible modules are categories into various group based on there functionality, 
 		  - lineinfile:
 			  path: /etc/resolv.conf 
 			  line: 'nameserver 10.1.250.10'
+			  create: yes  # if file !exist create it 
 	  ```
 
-	  The above playbook will ensure that this line exists in resolv.conf, if not then it will add it and if it already exists then it will do nothing. 
+	  The above playbook will ensure that this line exists in resolv.conf, if not then it will add it and if it already exists then it will do nothing.
+
 	  
 	  If we try to do the same thing with script:
 	  ```bash

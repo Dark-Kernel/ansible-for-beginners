@@ -113,5 +113,18 @@ Example, we have a requirement to develop a playbook to check the status of a se
 
 	  
 ```
+##### 
 
+Using the when condition to run this task only on a specific host while `hosts` is set to `all`. 
 
+```YAML
+-  name: 'Execute a script on all web server nodes'
+   hosts: all
+   become: yes
+   tasks:
+     -  service: 'name=nginx state=started'
+        when: 'ansible_host=="host2"'
+
+```
+
+> `ansible_host` represents the current host.
