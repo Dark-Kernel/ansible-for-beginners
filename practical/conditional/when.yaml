@@ -1,0 +1,14 @@
+# Use the when conditional to print I am a Banana if the value of fruit is banana otherwise it should print I am not a Banana.
+
+---
+- name: 'Am I a Banana or not?'
+  hosts: localhost
+  connection: local
+  vars:
+    fruit: banana
+  tasks:
+    - command: 'echo "I am a Banana"'
+      when: fruit == "banana"
+
+    - command: 'echo "I am not a Banana"'
+      when: fruit != "banana"

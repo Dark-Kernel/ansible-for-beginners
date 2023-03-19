@@ -1,0 +1,21 @@
+# 1. Create an empty file called blog.txt under /opt/news/ directory on node01. Change its group owner to sam .
+# 2. Create an empty file called story.txt under /opt/news/ directory on node02. Change its user owner to sam .
+
+---
+- hosts: node01
+  become: true
+  tasks:
+    - name: Creating blog.txt file
+      file:
+        path: /opt/news/blog.txt
+        state: touch
+        group: sam
+
+- hosts: node02
+  become: true
+  tasks:
+    - name: Creating story.txt file
+      file:
+        path: /opt/news/story.txt
+        state: touch
+        owner: sam

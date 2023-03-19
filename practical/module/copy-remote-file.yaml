@@ -1,0 +1,10 @@
+# Create a playbook called copy.yml under /home/bob/playbooks/ directory to copy /usr/src/blog/index.html file to both nodes i.e node01 and node02 at location /opt/blog.
+
+---
+- hosts: all
+  become: true
+  tasks:
+    - copy:
+        src:  /usr/src/blog/index.html
+        dest: /opt/blog
+        remote_src: yes

@@ -1,0 +1,19 @@
+# 1. We have a file called /opt/music/blog.txt on node01. Using Ansible replace module replace string Kodekloud with Ansible in that file.
+# 2. We have a file called /opt/music/story.txt on node02. Using Ansible replace module replace the string Ansible with Kodekloud in that file.
+
+---
+- hosts: node01
+  become: true
+  tasks:
+    - replace:
+        path: /opt/music/blog.txt
+        regexp: 'Kodekloud'
+        replace: 'Ansible'
+
+- hosts: node02
+  become: true
+  tasks:
+    - replace:
+        path: /opt/music/story.txt
+        regexp: 'Ansible'
+        replace: 'Kodekloud'
