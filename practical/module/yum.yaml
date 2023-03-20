@@ -1,0 +1,11 @@
+# Create a playbook to install vim-enhanced package.
+
+---
+- name: 'Install the required package'
+  hosts: localhost
+  become: yes
+  connection: local
+  tasks:
+    - yum: 
+        name: vim-enhanced
+        state: present

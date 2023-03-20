@@ -1,0 +1,10 @@
+# Create an archive of /usr/src/ecommerce/ directory present on each node ie. node01 and node02. The archive name must be demo.tar.gz (make sure that archive format is tar.gz) and save it under /opt/ecommerce/ directory on each node itself.
+
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Create an archive demo.tar.gz
+    archive:
+      path: /usr/src/ecommerce/
+      dest: /opt/ecommerce/demo.tar.gz

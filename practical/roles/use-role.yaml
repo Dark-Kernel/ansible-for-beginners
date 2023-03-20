@@ -1,0 +1,6 @@
+
+---
+- hosts: node01
+  become: true
+  roles:
+    - roles/package

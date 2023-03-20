@@ -1,0 +1,11 @@
+# On node01, a file called /var/www/html/index.html is available. It already has some content. Using Ansible lineinfile module add the below given content in it:Welcome to Kernels Labs!
+
+---
+- hosts: node01
+  become: true
+  tasks:
+  - lineinfile:
+      path: /var/www/html/index.html
+      line: 'Welcome to Kernels Labs!'
+      state: present
+      insertbefore: BOF

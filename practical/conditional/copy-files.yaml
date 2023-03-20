@@ -1,0 +1,25 @@
+# 1. Copy blog.txt file present under /usr/src/condition directory on student-node to node01 under /opt/condition directory. Its user and group owner must be bob and its permissions must be 0640.
+
+# 2. Copy story.txt file present under /usr/src/condition directory on student-node to node02 under /opt/condition directory. Its user and group owner must be sam and its permissions must be 0400.
+
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Copy file with owner and permissions on node01
+      copy:
+        src: /usr/src/condition/blog.txt
+        dest: /opt/condition/blog.txt
+        owner: bob
+        group: bob
+        mode: "0640"
+      when: inventory_hostname == "node01"
+
+    - name: Copy file with owner and permissions on node02
+      copy:
+        src: /usr/src/condition/story.txt
+        dest: /opt/condition/story.txt
+        owner: sam
+        group: sam
+        mode: "0400"
+      when: inventory_hostname == "node02"

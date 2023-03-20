@@ -1,0 +1,13 @@
+# Create an Ansible role called package under /home/user/playbooks/roles directory on node01. It should install a package called nginx and should start its service as well. 
+# !! Exectute this command before creating file on that directory : ~ $ ansible-galaxy init package !!
+
+---
+# tasks file for nginx
+- name: Install Nginx
+  ansible.builtin.package:
+    name: nginx 
+    state: latest
+- name: Start Nginx Service
+  ansible.builtin.service:
+    name: nginx 
+    state: started

@@ -1,0 +1,14 @@
+# 1. configure playbook to install vsftpd package on both nodes i.e node01 and node02.
+# 2. The playbook must start the vsftpd service on both nodes.
+
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Install httpd package
+    yum: name=vsftpd state=installed
+
+  - name: Start service
+    service:
+      name: vsftpd
+      state: started
